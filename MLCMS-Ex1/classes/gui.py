@@ -385,7 +385,8 @@ class MainGUI():
                 
     def scenario_4(self):
         """
-      Assuming that every 3*3 pixel represents an area of 1 square meter, scenario 4 is loaded and the simulation is parameterized by the pedestrian density to be simulated. The scenario consists of populating a corridor that measures 1000 meters in length and 10 meters in width with individuals who possess a comparable free walking speed, ideally ranging from 1.2 to 1.4 meters per second. The pedestrian densities that are simulated span from 0.5 persons per square meter up to 6 persons per square meter.    
+      Assuming that every 3*3 pixel represents an area of 1 square meter, scenario 4 is loaded
+      and the simulation is parameterized by the pedestrian density to be simulated..
         """
         target_grid = self.scenario.target_grid
         recompute_method = self.scenario.recompute_method
@@ -410,7 +411,7 @@ class MainGUI():
         for i in range(30):
             for j in range(5):
                 pedestrians_num = int(self.density * 4)
-                self.scenario.pedestrians += self.fill_pedestrians((i*6, j*6+135), (6, 6), pedestrians_num, 4)
+                self.scenario.pedestrians += self.fill_pedestrians((i*6, j*6+135), (5, 5), pedestrians_num, 3.9)
         
         self.scenario.measuring_points = [(120,147,6),(270,147,6),(270,153,6)]
         for measuring_point in self.scenario.measuring_points:
@@ -506,10 +507,16 @@ class MainGUI():
 
         self.scenario.recompute_target_distances()
         
-        self.scenario.pedestrians = [ ]
+        self.scenario.pedestrians = []
         for row, col in self.data['pedestrians']:
             self.scenario.pedestrians.append(Pedestrian((row, col), 1))
-                    
+
+        #In Scenario 1 , we should edit the Pedestrians' speed to 3.33 pixels per second
+        if self.data['scenario']==1:
+            self.scenario.pedestrians = []
+            for row, col in self.data['pedestrians']:
+                self.scenario.pedestrians.append(Pedestrian((row, col), 3.33))
+
         ##works in scenario7 , adding ages, speeds
         if self.data['scenario']==7:
             self.scenario.assign_ages()

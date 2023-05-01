@@ -14,10 +14,10 @@ positions = {"scenario":1,
              "pedestrians": [ ]}
 
 for i in range(0,100):
-    for j in range(0, 48):
+    for j in range(39, 48):
         positions["obstacles"].append( [i,j] )
 
-    for j in range(53, 100):
+    for j in range(53, 62):
         positions["obstacles"].append( [i,j] )
 
         # target positions

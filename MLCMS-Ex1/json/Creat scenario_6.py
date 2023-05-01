@@ -19,15 +19,19 @@ for i in range(20, 24):
 
 # obstacle positions
 for i in range(0,20):
-    for j in range(0, 20):
+    for j in range(18, 20):
+        positions["obstacles"].append( [i,j] )
+
+for j in range(0,20):
+    for i in range(18, 20):
         positions["obstacles"].append( [i,j] )
 
 # pedestrians positions (20 pedestrians)
 for i in range(0, 5):
     for j in range(20, 24):
-        positions["pedestrians"].append( [i,j,1] )
+        positions["pedestrians"].append( [i,j] )
 
 # write positions to json file
-with open("scenario-888.json", "w") as f:
+with open("scenario-6.json", "w") as f:
     json.dump(positions, f)
 

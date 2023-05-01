@@ -12,7 +12,7 @@ positions = {
             "height": 50,
             "target": [], 
              "obstacles": [], 
-             "pedestrians": []}c
+             "pedestrians": []}
 
 
 for i in range(0, 50):
