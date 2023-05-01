@@ -58,8 +58,8 @@ class MainGUI():
                 self.step_forward()
                 if updated == False:
                     return
-
-                root.after(100, counting)  # 在100毫秒后执行counting()函数,即循环执行counting  
+                # looping after 100ms
+                root.after(100, counting)
             else:                
                 self.running_signal = False
                 return            
@@ -556,7 +556,7 @@ class MainGUI():
         menu.add_cascade(label='Simulation', menu=file_menu)
         file_menu.add_command(label='Edit',command=lambda:self.edit_scenario_gui())
         file_menu.add_command(label='Load',command=lambda: self.load_task())
-#         file_menu.add_command(label='Scenario 4',command=lambda: self.scenario_4())
+
 
         win.config(menu=menu)      
         # Set up frames for button,canvas,and label 
