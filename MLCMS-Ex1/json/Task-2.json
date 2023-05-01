@@ -4,7 +4,7 @@
      "height": 50,
     "rows": 50,
     "cols": 50,
-    "pedestrians": [ [4,25] ],
+    "pedestrians": [ [5,25] ],
     "obstacles": [ ],
     "target": [ [25,25] ],
     "method": "Euclidean",
